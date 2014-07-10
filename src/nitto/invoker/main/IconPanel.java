@@ -9,6 +9,10 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+/**
+ * @author Nitto Bartholy
+ * 
+ */
 public class IconPanel extends JPanel
 {
 	private static final long serialVersionUID = 1084356898362064983L;
@@ -36,12 +40,18 @@ public class IconPanel extends JPanel
 	private BufferedImage wex;
 	private BufferedImage exort;
 	
+	/**
+	 * 
+	 */
 	public IconPanel()
 	{
 		initImageSlots();
 		this.setBackground(new Color(SimulatorGUI.BACKGROUND_COLOR, SimulatorGUI.BACKGROUND_COLOR, SimulatorGUI.BACKGROUND_COLOR));
 	}
 	
+	/**
+	 * 
+	 */
 	public void initImageSlots()
 	{
 		try
@@ -74,6 +84,9 @@ public class IconPanel extends JPanel
 		}
 	}
 	
+	/**
+	 * 
+	 */
 	public void parseQuas()
 	{
 		this.imageSlot3 = imageSlot2;
@@ -81,6 +94,9 @@ public class IconPanel extends JPanel
 		this.imageSlot1 = quas;
 	}
 	
+	/**
+	 * 
+	 */
 	public void parseWex()
 	{
 		this.imageSlot3 = imageSlot2;
@@ -88,6 +104,9 @@ public class IconPanel extends JPanel
 		this.imageSlot1 = wex;
 	}
 	
+	/**
+	 * 
+	 */
 	public void parseExort()
 	{
 		this.imageSlot3 = imageSlot2;
@@ -95,6 +114,9 @@ public class IconPanel extends JPanel
 		this.imageSlot1 = exort;
 	}
 	
+	/**
+	 * @param spell
+	 */
 	public void invokeDraw(InvokeSpell spell)
 	{
 		imageSlotF = imageSlotD;
@@ -136,6 +158,9 @@ public class IconPanel extends JPanel
 		}
 	}
 	
+	/**
+	 * @param spell
+	 */
 	public void setNextImage(InvokeSpell spell)
 	{
 		switch (spell)
@@ -176,6 +201,11 @@ public class IconPanel extends JPanel
 		}
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+	 */
 	@Override
 	protected void paintComponent(Graphics g)
 	{
@@ -188,6 +218,11 @@ public class IconPanel extends JPanel
 		g.drawImage(imageSlot4, 680, 10, null);
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see javax.swing.JComponent#update(java.awt.Graphics)
+	 */
 	@Override
 	public void update(Graphics g)
 	{

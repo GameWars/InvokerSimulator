@@ -2,8 +2,15 @@ package nitto.invoker.main;
 
 import javax.swing.UIManager;
 
+/**
+ * @author Nitto Bartholy
+ * 
+ */
 public class InvokerLauncher
 {
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args)
 	{
 		try

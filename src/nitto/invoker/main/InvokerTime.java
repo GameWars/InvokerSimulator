@@ -2,6 +2,10 @@ package nitto.invoker.main;
 
 import java.text.DecimalFormat;
 
+/**
+ * @author Nitto Bartholy
+ *
+ */
 public class InvokerTime implements Runnable
 {
 	private long currentTimePassed;
@@ -19,11 +23,17 @@ public class InvokerTime implements Runnable
 	
 	private SimulatorGUI jframe;
 	
+	/**
+	 * @param jframe
+	 */
 	public InvokerTime(SimulatorGUI jframe)
 	{
 		this.jframe = jframe;
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Runnable#run()
+	 */
 	@Override
 	public void run()
 	{
@@ -36,6 +46,9 @@ public class InvokerTime implements Runnable
 		updateLoop();
 	}
 	
+	/**
+	 * 
+	 */
 	public void updateLoop()
 	{
 		long lastLoopTime = System.nanoTime();
@@ -71,6 +84,9 @@ public class InvokerTime implements Runnable
 		}
 	}
 	
+	/**
+	 * @param delta
+	 */
 	public void update(double delta)
 	{
 		if (running)
@@ -99,26 +115,41 @@ public class InvokerTime implements Runnable
 		}
 	}
 	
+	/**
+	 * @param running
+	 */
 	public void setRunning(boolean running)
 	{
 		this.running = running;
 	}
 	
+	/**
+	 * @return
+	 */
 	public boolean isRunning()
 	{
 		return running;
 	}
 	
+	/**
+	 * @return
+	 */
 	public long getCurrentTimePassed()
 	{
 		return currentTimePassed;
 	}
 	
+	/**
+	 * @param currentTimePassed
+	 */
 	public void setCurrentTimePassed(long currentTimePassed)
 	{
 		this.currentTimePassed = currentTimePassed;
 	}
 	
+	/**
+	 * @param startTime
+	 */
 	public synchronized void setStartTime(long startTime)
 	{
 		this.startTime = startTime;

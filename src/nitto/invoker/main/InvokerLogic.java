@@ -3,6 +3,10 @@ package nitto.invoker.main;
 import java.awt.event.KeyEvent;
 import java.util.Random;
 
+/**
+ * @author Nitto Bartholy
+ *
+ */
 public class InvokerLogic
 {
 	private IconPanel panel;
@@ -25,12 +29,18 @@ public class InvokerLogic
 	
 	private int failed;
 	
+	/**
+	 * @param panel
+	 */
 	public InvokerLogic(IconPanel panel)
 	{
 		this.panel = panel;
 		init();
 	}
 	
+	/**
+	 * 
+	 */
 	public void init()
 	{
 		random = new Random(System.currentTimeMillis());
@@ -51,6 +61,9 @@ public class InvokerLogic
 		
 	}
 	
+	/**
+	 * @param e
+	 */
 	public void handleKey(KeyEvent e)
 	{
 		if (started)
@@ -101,6 +114,9 @@ public class InvokerLogic
 		}
 	}
 	
+	/**
+	 * 
+	 */
 	public void invoke()
 	{
 		int quas = getNumberQuas();
@@ -170,6 +186,12 @@ public class InvokerLogic
 		}
 	}
 	
+	/**
+	 * @param quas
+	 * @param wex
+	 * @param exort
+	 * @return
+	 */
 	private boolean isValidInvoke(int quas, int wex, int exort)
 	{
 		if (currentSpell.equals(InvokeSpell.COLD_SNAP) && quas == 3)
@@ -215,6 +237,9 @@ public class InvokerLogic
 		return false;
 	}
 	
+	/**
+	 * @return
+	 */
 	public int getNumberQuas()
 	{
 		int quas = 0;
@@ -233,6 +258,9 @@ public class InvokerLogic
 		return quas;
 	}
 	
+	/**
+	 * @return
+	 */
 	public int getNumberWex()
 	{
 		int wex = 0;
@@ -251,6 +279,9 @@ public class InvokerLogic
 		return wex;
 	}
 	
+	/**
+	 * @return
+	 */
 	public int getNumberExort()
 	{
 		int exort = 0;
@@ -269,6 +300,9 @@ public class InvokerLogic
 		return exort;
 	}
 	
+	/**
+	 * @return
+	 */
 	public InvokeSpell getNextSpell()
 	{
 		InvokeSpell c = currentSpell;
@@ -286,31 +320,49 @@ public class InvokerLogic
 		return currentSpell;
 	}
 	
+	/**
+	 * @param started
+	 */
 	public void setStarted(boolean started)
 	{
 		this.started = started;
 	}
 	
+	/**
+	 * @return
+	 */
 	public boolean isStarted()
 	{
 		return started;
 	}
 	
+	/**
+	 * @return
+	 */
 	public int getSuccessful()
 	{
 		return successful;
 	}
 	
+	/**
+	 * @return
+	 */
 	public int getFailed()
 	{
 		return failed;
 	}
 	
+	/**
+	 * @return
+	 */
 	public int getTotal()
 	{
 		return getSuccessful() + getFailed();
 	}
 	
+	/**
+	 * @return
+	 */
 	public double getPercentage()
 	{
 		double perc = ((double) successful / getTotal()) * 100;

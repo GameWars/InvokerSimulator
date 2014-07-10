@@ -18,6 +18,10 @@ import javax.swing.JTextField;
 import nitto.invoker.log.LogCreator;
 import nitto.invoker.log.LogFile;
 
+/**
+ * @author Nitto Bartholy
+ *
+ */
 public class SimulatorGUI extends JFrame implements ActionListener, KeyListener
 {
 	private static final long serialVersionUID = 285617875983888060L;
@@ -59,6 +63,9 @@ public class SimulatorGUI extends JFrame implements ActionListener, KeyListener
 	
 	private DecimalFormat df;
 	
+	/**
+	 * 
+	 */
 	public SimulatorGUI()
 	{
 		super("Invoker Simulator");
@@ -195,21 +202,33 @@ public class SimulatorGUI extends JFrame implements ActionListener, KeyListener
 		setVisible(true);
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyTyped(KeyEvent e)
 	{
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyPressed(KeyEvent e)
 	{
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyReleased(KeyEvent e)
 	{
@@ -236,16 +255,25 @@ public class SimulatorGUI extends JFrame implements ActionListener, KeyListener
 		}
 	}
 	
+	/**
+	 * @return
+	 */
 	public JTextField getTimePassedText()
 	{
 		return timePassedText;
 	}
 	
+	/**
+	 * @return
+	 */
 	public JTextField getInvokePerTime()
 	{
 		return invokePerTime;
 	}
 	
+	/**
+	 * @return
+	 */
 	public int getSuccessfulInvoke()
 	{
 		if (successfulInvoke.getText().equals(""))
@@ -255,6 +283,9 @@ public class SimulatorGUI extends JFrame implements ActionListener, KeyListener
 		return Integer.parseInt(successfulInvoke.getText());
 	}
 	
+	/**
+	 * 
+	 */
 	public void saveToLog()
 	{
 		LogFile logFile = new LogFile();

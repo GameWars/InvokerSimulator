@@ -7,12 +7,28 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Used to save and load LogFiles
+ * 
+ * @author Nitto Bartholy
+ */
 public class LogCreator
 {
+	/**
+	 * Private Constructor
+	 */
 	private LogCreator()
 	{
 	}
 	
+	/**
+	 * Used to create Log Files at the given path.
+	 * 
+	 * @param name
+	 *            Path and name where the log will be saved/overridden.
+	 * @param log
+	 *            LogFile to be saved.
+	 */
 	public static void createLog(String name, LogFile log)
 	{
 		try
@@ -28,6 +44,14 @@ public class LogCreator
 		}
 	}
 	
+	/**
+	 * Used to create Log Files at the given path.
+	 * 
+	 * @param name
+	 *            Path and name where the log will be saved/overridden.
+	 * @param text
+	 *            Text to be saved.
+	 */
 	public static void createLog(String name, String text)
 	{
 		try
@@ -43,6 +67,14 @@ public class LogCreator
 		}
 	}
 	
+	/**
+	 * Used to load Log Files at the given path.
+	 * 
+	 * @param name
+	 *            Path and name from where the log will be loaded.
+	 * @return A LogFile loaded from the given path. Will return an empty
+	 *         LogFile if File not found.
+	 */
 	public static LogFile loadLog(String name)
 	{
 		File file = new File(name);
